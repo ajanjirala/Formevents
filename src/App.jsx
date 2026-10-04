@@ -1,10 +1,12 @@
 import React from 'react'
-import Mainpage from './shopping folder/pages/Mainpage'
+import SimpleForm from './Simpleform'
 import './App.css'
 
-const App = () => {
+function App() {
   return (
-    <Mainpage />
+    <div>
+      <SimpleForm />
+    </div>
   )
 }
 

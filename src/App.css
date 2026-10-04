@@ -1,627 +1,210 @@
-/* ==========================================
+/* ==============================
    GENERAL
-========================================== */
+============================== */
 
 * {
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  color: #222;
-  background-color: #fff;
+  background-color: black;
 }
 
 
-/* ==========================================
-   MAIN HEADER
-========================================== */
+/* ==============================
+   FORM PAGE
+============================== */
 
-.main-header {
-  min-height: 125px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 30px;
-
-  padding: 0 55px;
-
-  background-color: white;
-  border-bottom: 1px solid #ddd;
-}
-
-
-/* ==========================================
-   SEARCH BAR
-========================================== */
-
-.search-box {
-  display: flex;
-  width: 370px;
-  height: 45px;
-}
-
-.search-box input {
-  flex: 1;
-  min-width: 0;
-
-  padding: 0 15px;
-
-  font-size: 16px;
-
-  border: 1px solid #ccc;
-  border-right: none;
-
-  outline: none;
-}
-
-.search-box input:focus {
-  border-color: #777;
-}
-
-.search-box button {
-  width: 50px;
-
-  border: none;
-
-  background-color: #333;
-  color: white;
-
-  font-size: 18px;
-  cursor: pointer;
-}
-
-.search-box button:hover {
-  background-color: #111;
-}
-
-
-/* ==========================================
-   LOGO
-========================================== */
-
-.logo {
-  font-size: 38px;
-  font-weight: 400;
-
-  letter-spacing: 8px;
-
-  white-space: nowrap;
-}
-
-
-/* ==========================================
-   HEADER ICONS
-========================================== */
-
-.header-icons {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-
-  font-size: 25px;
-}
-
-.header-icons span {
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.header-icons span:hover {
-  transform: translateY(-2px);
-}
-
-
-/* ==========================================
-   NAVIGATION BAR
-========================================== */
-
-.navbar {
-  min-height: 58px;
+.form-page {
+  min-height: 100vh;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  gap: 32px;
+  padding: 30px;
+}
 
-  padding: 0 25px;
+
+/* ==============================
+   FORM CONTAINER
+============================== */
+
+.form-container {
+  width: 500px;
 
   background-color: white;
 
-  border-bottom: 1px solid #ddd;
-}
+  padding: 45px 50px;
 
-.navbar a {
-  position: relative;
-
-  color: #111;
-
-  text-decoration: none;
-
-  font-size: 16px;
-
-  white-space: nowrap;
-
-  transition: color 0.2s ease;
-}
-
-.navbar a:hover {
-  color: #777;
-}
-
-.navbar a::after {
-  content: "";
-
-  position: absolute;
-
-  left: 0;
-  bottom: -7px;
-
-  width: 0;
-  height: 2px;
-
-  background-color: #222;
-
-  transition: width 0.25s ease;
-}
-
-.navbar a:hover::after {
-  width: 100%;
-}
-
-
-/* ==========================================
-   PROMOTIONAL BAR
-   FALL DEALS / TV STANDS / NEW ARRIVALS
-========================================== */
-
-.promo-bar {
-  width: 100%;
-
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-
-  padding: 18px 40px;
-
-  background-color: #f2ede7;
-
-  border-bottom: 1px solid #ddd;
-}
-
-.promo-item {
-  flex: 1;
-
-  text-align: center;
-
-  padding: 5px 25px;
-
-  border-right: 1px solid #aaa;
-}
-
-.promo-item:last-child {
-  border-right: none;
-}
-
-.promo-item h2 {
-  margin: 0 0 6px;
-
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.promo-item p {
-  margin: 0;
-
-  color: #444;
-
-  font-size: 15px;
-}
-
-
-/* ==========================================
-   HERO SECTION
-========================================== */
-
-.hero-banner {
-  width: 100%;
-  height: 500px;
-
-  /* IMPORTANT: Keep capital I in Images */
-  background-image: url("./Images/hero.jpg");
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-
-  text-align: center;
-
-  position: relative;
-}
-
-
-/* Slight dark overlay makes text easier to see */
-
-.hero-banner::before {
-  content: "";
-
-  position: absolute;
-
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 100%;
-
-  background: rgba(0, 0, 0, 0.12);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
-
-  margin-top: 35px;
-
-  color: white;
-}
-
-.hero-content h1 {
-  margin: 0;
-
-  font-size: 75px;
-  font-weight: 700;
-
-  letter-spacing: 8px;
-
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-}
-
-.hero-content h2 {
-  margin: 5px 0 35px;
-
-  font-size: 24px;
-
-  letter-spacing: 2px;
-
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-}
-
-.hero-content button {
-  width: 320px;
-
-  padding: 18px;
-
-  background-color: white;
-  color: #222;
-
-  border: none;
-  border-radius: 7px;
-
-  font-size: 20px;
-  font-weight: 600;
-
-  cursor: pointer;
-
-  transition:
-    transform 0.2s ease,
-    background-color 0.2s ease;
-}
-
-.hero-content button:hover {
-  background-color: #f1f1f1;
-  transform: translateY(-2px);
-}
-
-
-/* ==========================================
-   COLLECTIONS SECTION
-========================================== */
-
-.collections-section {
-  width: 100%;
-
-  padding: 60px 50px 70px;
-
-  background-color: #f8f8f8;
-}
-
-.collections-title {
-  margin: 0 0 40px;
-
-  text-align: center;
-
-  font-size: 34px;
-  font-weight: 700;
-}
-
-.collections-container {
-  width: 100%;
-  max-width: 1200px;
-
-  margin: 0 auto;
-
-  display: flex;
-
-  justify-content: center;
-
-  gap: 30px;
-}
-
-
-/* ==========================================
-   COLLECTION CARDS
-========================================== */
-
-.collection-card {
-  flex: 1;
-
-  min-height: 260px;
-
-  padding: 40px 30px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  text-align: center;
-
-  background-color: white;
-
-  border: 1px solid #eee;
   border-radius: 12px;
 
-  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.12);
 }
 
-.collection-card:hover {
-  transform: translateY(-7px);
 
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.14);
+/* ==============================
+   HEADING
+============================== */
+
+.form-container h1 {
+  margin: 0 0 10px;
+
+  text-align: center;
+
+  font-size: 36px;
+  color: #111;
 }
 
-.collection-card h3 {
-  margin: 0 0 12px;
+.form-description {
+  margin: 0 0 35px;
 
-  font-size: 25px;
+  text-align: center;
+
+  color: #777;
+
+  font-size: 18px;
 }
 
-.collection-card p {
-  max-width: 280px;
 
-  margin: 0 0 25px;
+/* ==============================
+   FORM
+============================== */
 
-  color: #666;
-
-  font-size: 15px;
-
-  line-height: 1.6;
+.form-container form {
+  display: flex;
+  flex-direction: column;
 }
 
-.collection-card button {
-  padding: 12px 30px;
+.form-container label {
+  margin-bottom: 10px;
+
+  font-size: 17px;
+  font-weight: bold;
+
+  color: #111;
+}
+
+
+/* ==============================
+   INPUT
+============================== */
+
+.form-container input {
+  width: 100%;
+
+  padding: 15px 16px;
+
+  margin-bottom: 25px;
+
+  border: 1px solid #ccc;
+  border-radius: 6px;
+
+  font-size: 17px;
+
+  outline: none;
+
+  transition: border-color 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+.form-container input:focus {
+  border-color: #222;
+
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ==============================
+   SUBMIT BUTTON
+============================== */
+
+.form-container button {
+  width: 100%;
+
+  padding: 15px;
 
   background-color: #222;
   color: white;
 
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
 
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 17px;
+  font-weight: bold;
 
   cursor: pointer;
 
-  transition:
-    background-color 0.2s ease,
-    transform 0.2s ease;
+  transition: background-color 0.2s ease,
+              transform 0.2s ease;
 }
 
-.collection-card button:hover {
+.form-container button:hover {
   background-color: #444;
 
   transform: translateY(-2px);
 }
 
+.form-container button:active {
+  transform: translateY(0);
+}
 
-/* ==========================================
-   FOOTER
-========================================== */
 
-.footer {
-  background-color: #222;
-  color: white;
+/* ==============================
+   OUTPUT BOX
+============================== */
+
+.output-box {
+  margin-top: 30px;
+
+  padding: 22px;
+
+  background-color: #f7f7f7;
+
+  border: 1px solid #ddd;
+  border-left: 5px solid #222;
+
+  border-radius: 6px;
 
   text-align: center;
-
-  padding: 50px 20px;
 }
 
-.footer h2 {
-  margin: 0 0 25px;
+.output-box h3 {
+  margin: 0 0 10px;
 
-  font-size: 25px;
+  font-size: 20px;
 
-  letter-spacing: 4px;
+  color: #222;
 }
 
-.footer-links {
-  display: flex;
-
-  justify-content: center;
-  align-items: center;
-
-  gap: 40px;
-}
-
-.footer-links p {
+.output-box p {
   margin: 0;
 
-  color: #ddd;
+  font-size: 18px;
 
-  cursor: pointer;
-
-  transition: color 0.2s ease;
-}
-
-.footer-links p:hover {
-  color: white;
-
-  text-decoration: underline;
+  color: #555;
 }
 
 
-/* ==========================================
-   TABLET RESPONSIVE
-========================================== */
+/* ==============================
+   MOBILE
+============================== */
 
-@media (max-width: 1100px) {
+@media (max-width: 600px) {
 
-  .main-header {
-    padding: 25px;
+  .form-page {
+    padding: 20px;
   }
 
-  .search-box {
-    width: 280px;
-  }
-
-  .logo {
-    font-size: 28px;
-    letter-spacing: 5px;
-  }
-
-  .navbar {
-    gap: 18px;
-
-    flex-wrap: wrap;
-
-    padding: 15px;
-  }
-
-  .hero-banner {
-    height: 430px;
-  }
-
-  .collections-container {
-    gap: 20px;
-  }
-}
-
-
-/* ==========================================
-   MOBILE RESPONSIVE
-========================================== */
-
-@media (max-width: 800px) {
-
-  .main-header {
-    flex-direction: column;
-
-    height: auto;
-
-    padding: 25px 20px;
-  }
-
-  .search-box {
+  .form-container {
     width: 100%;
-    max-width: 450px;
 
-    order: 2;
+    padding: 35px 25px;
   }
 
-  .logo {
-    font-size: 27px;
-
-    letter-spacing: 4px;
-  }
-
-  .header-icons {
-    gap: 20px;
-  }
-
-
-  /* Promo boxes become vertical */
-
-  .promo-bar {
-    flex-direction: column;
-
-    padding: 0 20px;
-  }
-
-  .promo-item {
-    border-right: none;
-
-    border-bottom: 1px solid #ccc;
-
-    padding: 18px 10px;
-  }
-
-  .promo-item:last-child {
-    border-bottom: none;
-  }
-
-
-  /* Hero */
-
-  .hero-banner {
-    height: 380px;
-  }
-
-  .hero-content h1 {
-    font-size: 50px;
-  }
-
-  .hero-content h2 {
-    font-size: 18px;
-  }
-
-  .hero-content button {
-    width: 250px;
-
-    padding: 14px;
-  }
-
-
-  /* Collections */
-
-  .collections-section {
-    padding: 45px 20px;
-  }
-
-  .collections-title {
-    font-size: 28px;
-
-    margin-bottom: 30px;
-  }
-
-  .collections-container {
-    flex-direction: column;
-  }
-
-  .collection-card {
-    width: 100%;
-  }
-
-
-  /* Footer */
-
-  .footer-links {
-    flex-direction: column;
-
-    gap: 15px;
+  .form-container h1 {
+    font-size: 30px;
   }
 }
